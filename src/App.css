@@ -1,10 +1,11 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
+  font-size:1.5em;
+  display: flex;
+  align-items: center;
+  flex-direction: column
 }
 
 .App-header {
@@ -16,6 +17,12 @@
 
 .App-title {
   font-size: 1.5em;
+}
+
+input[type="text"], optgroup, select
+{
+    font-size:1.5em;
+    text-align:center
 }
 
 .App-intro {

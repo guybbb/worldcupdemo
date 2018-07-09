@@ -4,9 +4,11 @@ import ReactCountryFlag from 'react-country-flag';
 
 
 const DropDownComponent = props => <select onChange={props.onChange} id="dd">
+<optgroup>
     <option disabled selected value/> {props
         .options
         .map(option => <option selected={option === props.selected} value={option}>{option}</option>)}
+</optgroup>
 </select>
 
 const GamesDisplay = (props) => <div>{props.team} Played {props.played} Games</div>
@@ -37,7 +39,7 @@ class Demo3 extends Component {
 
         return (
             <AppWithHeader>
-                <input id="team" onChange={this.handleTeamSelect} value={this.state.team}/>
+                <input id="team" type="text" onChange={this.handleTeamSelect} value={this.state.team}/>
                 <DropDownComponent
                     selected={this.state.team}
                     default="Choose a team"
@@ -59,10 +61,14 @@ const DontRenderIfTeamNotFound = props => props.played > 1
     : null;
 
 const AppWithHeader = props => (
-    <div className="App">
-        <h2>worldcup app</h2>
+<Fragment>
+    <div className="App-header">
+        <div className="App-title">Worldcup ⚽️ 2018👏🏻</div>
+    </div>
+    <div>
         {props.children}
     </div>
+</Fragment>
 )
 
 export default createRoute(Demo3, '/demo3')
