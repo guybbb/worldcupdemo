@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react'
 import {createRoute, howManyTimesPlayed, goalScored} from './utils'
+import './App.css';
 
 const TeamDisplay = (props) => <div>Played {props.played} Games</div>
 const Goals = (props) => <div>{props.goals} Goals Scored</div>

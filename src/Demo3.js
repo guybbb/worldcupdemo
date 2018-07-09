@@ -39,7 +39,7 @@ class Demo3 extends Component {
 
         return (
             <AppWithHeader>
-                <input id="team" type="text" onChange={this.handleTeamSelect} value={this.state.team}/>
+                <input id="team" type="text" placeholder="type a team name" onChange={this.handleTeamSelect} value={this.state.team}/>
                 <DropDownComponent
                     selected={this.state.team}
                     default="Choose a team"

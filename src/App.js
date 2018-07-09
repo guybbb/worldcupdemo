@@ -10,9 +10,9 @@ import Demo3 from './Demo3'
 
 const App = (props) => <BrowserRouter>
   <div className="App">
-      <Link to="/demo1">Demo 1 - React 101 | </Link>
-      <Link to="/demo2">Demo 2 - Composition | </Link>
-      <Link to="/demo3">Demo 3 - Lift State Up | </Link>
+      <Link to="/demo1">DEMO 1      | </Link>
+      <Link to="/demo2">DEMO 2      | </Link>
+      <Link to="/demo3">DEMO 3      | </Link>
       <Demo1/>
       <Demo2/>
       <Demo3/>
