@@ -18,6 +18,7 @@ export const howManyTimesPlayed = (team) => wd
 
 export const goalScored = (team) => wd
     .rounds
+    // eslint-disable-next-line
     .map((round) => round.matches.map(match => {
         if (match.team1.name ===team) 
             return match.score1
@@ -33,4 +34,9 @@ export const countryNameToCode = (name) => {
     return result
 }
 
-export const createRoute = (component, path) => props => <Route path={path} component={component} exact/>
+export const createRoute = (component, path) => { 
+
+    const routeComponent = props => <Route path={path} component={component} exact/>
+    routeComponent.displayName = `Route-${path}`;
+    return routeComponent;
+}

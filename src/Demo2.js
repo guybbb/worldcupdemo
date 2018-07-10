@@ -2,9 +2,23 @@ import React, {Component, Fragment} from 'react'
 import {createRoute, howManyTimesPlayed, goalScored} from './utils'
 import './App.css';
 
-const TeamDisplay = (props) => <div>Played {props.played} Games</div>
+const TeamDisplay = (props) => <div>{props.team} Played {props.played} Games</div>
 const Goals = (props) => <div>{props.goals} Goals Scored</div>
 
+class SearchBox extends Component {
+   state = {
+       text:''
+   }
+
+   changeText = (text) => {
+       this.setState({text: text.target.value})
+       this.props.onChange(text)
+   }
+
+   render() {
+       return <input id="team" type="text" placeholder="type a team name" onChange={this.changeText} value={this.state.text}/>
+    } 
+}
 
 class Demo2 extends Component {
     state = {
@@ -24,9 +38,9 @@ class Demo2 extends Component {
     render() {
         return (
             <AppWithHeader>
-                <input id="team" type="text" placeholder="type a team name" onChange={this.handleTeamSelect} value={this.state.team}/>
+                <SearchBox onChange={this.handleTeamSelect} />
                 <DontRenderIfTeamNotFound played={this.state.played}>
-                    <TeamDisplay played={this.state.played}/>
+                    <TeamDisplay played={this.state.played} team={this.state.team}/>
                     <Goals goals={this.state.goals} />
                 </DontRenderIfTeamNotFound>
             </AppWithHeader>
